@@ -24,7 +24,7 @@ export default {
     onwarn: () => { return },
     output: {
         file: 'lib/index.js',
-        format: 'es',
+        format: 'cjs',
         sourcemap: false
     }
 }
