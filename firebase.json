@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "predeploy": "npm --prefix functions run build",
+    "source": "functions"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}
