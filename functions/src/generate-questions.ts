@@ -7,7 +7,7 @@ if (apps.length === 0) {
 }
 const db = firestore();
 
-export const generateQuestions = https.onRequest(async () => {
+export const generateQuestions = https.onRequest(async (_, res) => {
     let batch = db.batch();
 
     let count = 0
@@ -28,5 +28,6 @@ export const generateQuestions = https.onRequest(async () => {
     }
 
     await batch.commit();
+    res.send(`count: ${count} added.`)
 });
 
