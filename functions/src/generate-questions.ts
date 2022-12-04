@@ -1,8 +1,11 @@
-import { getFirestore } from "firebase-admin/firestore";
+import {initializeApp, firestore, apps} from 'firebase-admin';
 import {https} from "firebase-functions";
 import { addresses } from "./addresses";
 
-const db = getFirestore();
+if (apps.length === 0) {
+    initializeApp();
+}
+const db = firestore();
 
 export const generateQuestions = https.onRequest(async () => {
     let batch = db.batch();

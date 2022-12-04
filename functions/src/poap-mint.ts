@@ -1,13 +1,16 @@
-import {firestore} from 'firebase-functions';
-import { getFirestore, FieldValue } from 'firebase-admin/firestore';
+import {firestore as firestoreEvent} from 'firebase-functions';
+import { FieldValue } from 'firebase-admin/firestore';
+import { initializeApp,firestore, apps } from 'firebase-admin';
 
-
-const db = getFirestore();
+if (apps.length === 0) {
+    initializeApp();
+}
+const db = firestore();
 
 /**
  * Trigger a function with an firestore document created.
  */
-export const poapMint = firestore.document('/users/{userId}/poap/{poapId}').onCreate(async (change, context) => {
+export const poapMint = firestoreEvent.document('/users/{userId}/poap/{poapId}').onCreate(async (change, context) => {
     const { userId } = context.params;
     if (!userId) {
         console.warn(`/users/{userId} userId is undefined`);

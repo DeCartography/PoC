@@ -1,8 +1,12 @@
-import { getFirestore } from "firebase-admin/firestore";
+import { initializeApp, firestore, apps } from 'firebase-admin';
 import {auth} from "firebase-functions";
 
 
-const db = getFirestore();
+if (apps.length === 0) {
+    initializeApp();
+}
+const db = firestore();
+
 const QUESTIONS_LIMIT = 100;
 
 export const insertUserQuestions = auth.user().onCreate(async (user) => {
