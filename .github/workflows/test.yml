@@ -14,12 +14,12 @@ jobs:
         run: yarn install --immutable
       - name: Run tsc
         run: yarn tsc
-        working-directory: ./functions
+        working-directory: ./packages/functions
       - name: Run lint
         run: yarn lint
-        working-directory: ./functions
+        working-directory: ./packages/functions
       - name: Run prettier
         run: yarn prettier
-        working-directory: ./functions
+        working-directory: ./packages/functions
       - name: Run build
         run: yarn build
