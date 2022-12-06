@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>hatena/renovate-config",
+    "schedule:weekly",
+    ":automergePatch",
+    ":disableRateLimiting"
+  ],
+  "separateMultipleMajor": true,
+  "packageRules": [
+    {
+      "groupName": "linters",
+      "extends": ["packages:linters"],
+      "packagePatterns": ["^@typescript-eslint/", "prettier"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    },
+    {
+      "groupName": "sdk",
+      "matchPackageNames": ["firebase", "firebase-admin", "firebase-functions"],
+      "packagePatterns": ["^@firebase/"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    }
+  ]
+}
