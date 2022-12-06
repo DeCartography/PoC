@@ -16,7 +16,7 @@
   "main": "lib/index.js",
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "pre-push": "yarn build"
+    "pre-push": "yarn --cwd /functions build"
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^2.1.0",
