@@ -1,0 +1,24 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install packages
+        run: yarn install --immutable
+        working-directory: ./functions
+      - name: Run tsc
+        run: yarn tsc
+        working-directory: ./functions
+      - name: Run lint & formatter
+        run: yarn lint
+        working-directory: ./functions
+      - name: Run build
+        run: yarn build
+        working-directory: ./functions
