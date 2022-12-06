@@ -12,7 +12,6 @@ jobs:
           node-version: 16.x
       - name: Install packages
         run: yarn install --immutable
-        working-directory: ./functions
       - name: Run tsc
         run: yarn tsc
         working-directory: ./functions
@@ -21,4 +20,3 @@ jobs:
         working-directory: ./functions
       - name: Run build
         run: yarn build
-        working-directory: ./functions
