@@ -15,7 +15,7 @@
   ],
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "pre-push": "yarn functions build"
+    "pre-push": "yarn --cwd packages/functions build"
   },
   "scripts": {
     "functions": "yarn workspace functions"
