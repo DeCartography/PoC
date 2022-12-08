@@ -128,3 +128,6 @@ dist
 
 .vscode/
 *.profraw
+
+.output
+.firebase
