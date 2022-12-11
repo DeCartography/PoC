@@ -1,0 +1,24 @@
+{
+  "name": "soroban",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:DeCartography/PoC.git",
+  "author": "SHØ <neila@users.noreply.github.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "lint-staged": "^13.1.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "yarn build"
+  },
+  "scripts": {
+    "functions": "yarn workspace functions",
+    "build": "yarn workspace functions build"
+  }
+}
