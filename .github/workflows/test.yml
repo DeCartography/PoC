@@ -20,3 +20,4 @@ jobs:
         working-directory: ./packages/functions
       - name: Run build
         run: yarn build
+        working-directory: ./packages/functions
