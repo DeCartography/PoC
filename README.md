@@ -1,11 +1,14 @@
 # PoC
 
-## Install
+## Install と git hooks の設定
 
 ```
 git clone git@github.com:DeCartography/PoC.git
 yarn install
+yarn simple-git-hooks
 ```
+
+## コマンドの実行
 
 yarn workspaces を用いてサブモジュール管理を行っているため、
 
