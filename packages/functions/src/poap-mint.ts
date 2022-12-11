@@ -1,5 +1,4 @@
 import { apps, firestore, initializeApp } from 'firebase-admin';
-import { FieldValue } from 'firebase-admin/firestore';
 import { firestore as firestoreEvent } from 'firebase-functions';
 
 if (apps.length === 0) {
@@ -31,7 +30,7 @@ export const poapMint = firestoreEvent
     questionIds.forEach((id) => {
       const ref = db.doc(`/questions/${id}`);
       batch.update(ref, {
-        count: FieldValue.increment(1),
+        count: firestore.FieldValue.increment(1),
       });
     });
 
