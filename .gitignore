@@ -126,5 +126,7 @@ dist
 .pnp.*
 
 
-.vscode/
 *.profraw
+
+.output
+.firebase

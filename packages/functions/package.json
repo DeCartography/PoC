@@ -1,6 +1,11 @@
 {
   "name": "functions",
   "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "16"
+  },
+  "type": "commonjs",
   "scripts": {
     "build:dev": "rimraf ./lib/**/* && tsc --watch",
     "build": "rimraf ./lib/**/* && npm run lint && rollup -c rollup.config.js",
@@ -48,10 +53,5 @@
     "sinon-chai": "^3.7.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
-  },
-  "private": true,
-  "engines": {
-    "node": "16"
-  },
-  "type": "commonjs"
+  }
 }
