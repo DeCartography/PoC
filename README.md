@@ -19,3 +19,7 @@ yarn workspace functions [コマンド名]
 
 などのように workspace を指定し、該当`workspace`内のコマンドを用いる。例: `yarn workspace frontend preview`
 root ディレクトリではなく、直接`packages/*/`に入ってコマンドを打つのであれば、該当パッケージの`package.json`を参照すれば良い。
+
+
+## docs
+/about.md
