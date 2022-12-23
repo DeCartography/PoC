@@ -21,7 +21,7 @@ type Nft = {
   title: string;
 };
 
-const questionsLengthToAnswer = 99; // start from 0
+const questionsLengthToAnswer = 49; // start from 0
 
 const router = useRouter();
 const { user } = useAuth();
