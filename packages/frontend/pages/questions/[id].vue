@@ -192,6 +192,11 @@ const getNftDetail = (ownedNfts: OwnedNft[]) => {
           image: nft.media[0].raw,
           title: nft.title,
         };
+      } else {
+        return {
+          image: "",
+          title: "",
+        };
       }
     });
 };
