@@ -6,7 +6,7 @@ if (apps.length === 0) {
 }
 const db = firestore();
 
-const QUESTIONS_LIMIT = 100;
+const QUESTIONS_LIMIT = 50;
 
 export const insertUserQuestions = auth.user().onCreate(async (user) => {
   const userId = user.uid;
