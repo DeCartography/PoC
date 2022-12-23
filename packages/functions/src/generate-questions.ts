@@ -1,5 +1,5 @@
 import { apps, firestore, initializeApp } from 'firebase-admin';
-import { https } from 'firebase-functions';
+import { https, setGlobalOptions } from 'firebase-functions/v2';
 
 import { addresses } from './addresses';
 
@@ -8,7 +8,12 @@ if (apps.length === 0) {
 }
 const db = firestore();
 
-export const generateQuestions = https.onRequest(async (_, res) => {
+setGlobalOptions({
+  timeoutSeconds: 3600
+})
+
+// WARN: lower case v2 gen function limitation
+export const generatequestions = https.onRequest(async (_, res) => {
   let batch = db.batch();
 
   let count = 0;
