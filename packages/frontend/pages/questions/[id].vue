@@ -21,7 +21,7 @@ type Nft = {
   title: string;
 };
 
-const questionsLengthToAnswer = 99; // start from 0
+const questionsLengthToAnswer = 49; // start from 0
 
 const router = useRouter();
 const { user } = useAuth();
@@ -191,6 +191,11 @@ const getNftDetail = (ownedNfts: OwnedNft[]) => {
         return {
           image: nft.media[0].raw,
           title: nft.title,
+        };
+      } else {
+        return {
+          image: "",
+          title: "",
         };
       }
     });
